@@ -144,12 +144,10 @@ class WordCount(MapReduce):
     #keyvalue is f.readline()
     #value is f.read()
     def Map(self, keyvalue, value):
-<<<<<<< HEAD
-        result1 = []      
-=======
-        result1 = []   
->>>>>>> abfb8a7f287dd99b7ea3e00a4b46a769d341821a
-        for word in value.split():
+        result1 = []
+        my_list = re.split(r'[^a-zA-Z]+', value)
+        for word in my_list:
+            # print(f'word: {word}')
             result1.append((word, 1))
         return result1
 
